@@ -1,17 +1,26 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <el-row class="mb-4">
+    <el-button disabled>Default</el-button>
+    <el-button type="primary" disabled>Primary</el-button>
+    <el-button type="success" disabled>Success</el-button>
+    <el-button type="info" disabled>Info</el-button>
+    <el-button type="warning" disabled>Warning</el-button>
+    <el-button type="danger" disabled>Danger</el-button>
+  </el-row>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
+import HelloWorld from './components/HelloWorld.vue';
 
-export default {
-  name: 'App',
+@Options({
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+  },
+})
+export default class App extends Vue {}
 </script>
 
 <style>
